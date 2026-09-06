@@ -9,7 +9,7 @@ export async function POST(req: NextRequest) {
     const r = await fetch("https://api.groq.com/openai/v1/chat/completions", {
       method: "POST",
       headers: { "Content-Type": "application/json", "Authorization": `Bearer ${GROQ}` },
-      body: JSON.stringify({ model: "llama-3.3-70b-versatile", max_tokens: 1200,
+      body: JSON.stringify({ model: "openai/gpt-oss-120b", max_tokens: 1200,
         messages: [{role:"system",content:"You are Javari Events, an expert AI for event planning. Create invitations, promotional copy, day-of timelines, and vendor communications for any event."},{role:"user",content:message}]
       })
     });
